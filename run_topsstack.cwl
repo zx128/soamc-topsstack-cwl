@@ -7,8 +7,8 @@ $namespaces:
 baseCommand: [sh]
 arguments:
 - -c
-- cat $HOME/.netrc && 
-  echo /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
+- cat .netrc && 
+  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)"
 #- if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
 #  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
 hints:
@@ -19,7 +19,7 @@ hints:
 requirements:
   DockerRequirement:
   #  dockerPull: container-xing_topsstack_hamsar:devel
-    dockerPull: hysds1/pge-base-conda-python368:20200818
+    dockerPull: pymonger/pge-base-conda-python368:20220121
   InitialWorkDirRequirement:
     listing:
       - entryname: .netrc
@@ -37,9 +37,13 @@ inputs:
   parameters:
     type: File
 outputs:
-  stdout_file:
+  stdout_stream:
     type: stdout
-  stderr_file:
+  stderr_stream:
     type: stderr
-stdout: stdout_run_topsstack.txt
-stderr: stderr_run_topsstack.txt
+#  stdout_file:
+#    type: stdout
+#  stderr_file:
+#    type: stderr
+#stdout: stdout_run_topsstack.txt
+#stderr: stderr_run_topsstack.txt
