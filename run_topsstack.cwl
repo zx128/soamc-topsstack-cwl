@@ -51,13 +51,9 @@ inputs:
   end_date: string
   track_number: int
 outputs:
-  stdout_stream:
+  stdout_file:
     type: stdout
-  stderr_stream:
+  stderr_file:
     type: stderr
-#  stdout_file:
-#    type: stdout
-#  stderr_file:
-#    type: stderr
-#stdout: stdout_run_topsstack.txt
-#stderr: stderr_run_topsstack.txt
+stdout: stdout_run_topsstack.txt
+stderr: stderr_run_topsstack.txt
