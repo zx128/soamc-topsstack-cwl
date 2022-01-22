@@ -1,7 +1,12 @@
 input_nb: "/home/jovyan/topsstack_hamsar/notebook_pges/xing-topsstack_hamsar_pge.ipynb"
 output_nb: "xing-topsstack_hamsar_pge-output.ipynb"
-parameters: 
-  class: File
-  path: input.json
+min_lat: -8.621
+max_lat: -8.218
+min_lon: 122.859
+max_lon: 123.576
+master_date: "20210325"
+start_date: "2021-03-15"
+end_date: "2021-04-08"
+track_number: 163
 urs_user: "user"
 urs_pass: "pass"
