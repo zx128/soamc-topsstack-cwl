@@ -27,7 +27,7 @@ hints:
 requirements:
   DockerRequirement:
   #  dockerPull: container-xing_topsstack_hamsar:devel
-    dockerPull: pymonger/pge-base-conda-python368:20220121
+    dockerPull: hysds1/pge-base-conda-python368:20200818
   InitialWorkDirRequirement:
     listing:
       - entryname: .netrc
