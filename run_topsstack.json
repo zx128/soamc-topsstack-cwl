@@ -46,6 +46,6 @@
     },
     "immediateDeployment": true,
     "executionUnit": [{
-        "href": "docker://hysds1/pge-base-conda-python368:20200818"
+        "href": "docker://pymonger/pge-base-conda-python368:20220121"
     }]
 }
