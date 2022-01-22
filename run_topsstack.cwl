@@ -8,7 +8,15 @@ baseCommand: [sh]
 arguments:
 - -c
 - cat .netrc && 
-  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)"
+  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
+  -p min_lat '$(inputs.min_lat)'
+  -p max_lat '$(inputs.max_lat)'
+  -p min_lon '$(inputs.min_lon)'
+  -p max_lon '$(inputs.max_lon)'
+  -p master_date '$(inputs.master_date)'
+  -p start_date '$(inputs.start_date)'
+  -p end_date '$(inputs.end_date)'
+  -p track_number '$(inputs.track_number)'
 #- if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
 #  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
 hints:
@@ -34,8 +42,14 @@ inputs:
   urs_pass: string
   input_nb: string
   output_nb: string
-  parameters:
-    type: File
+  min_lat: float
+  max_lat: float
+  min_lon: float
+  max_lon: float
+  master_date: string
+  start_date: string
+  end_date: string
+  track_number: int
 outputs:
   stdout_stream:
     type: stdout
