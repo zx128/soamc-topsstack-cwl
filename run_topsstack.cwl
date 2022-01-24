@@ -40,9 +40,9 @@ requirements:
   # https://www.commonwl.org/v1.1/CommandLineTool.html#ResourceRequirement
   ResourceRequirement:
     class: ResourceRequirement
-    coresMin: 8
+    coresMin: 4
     # the next 3 are in mebibytes
-    ramMin: 16384
+    ramMin: 8192
     tmpdirMin: 10240
     outdirMin: 5120
 inputs:
