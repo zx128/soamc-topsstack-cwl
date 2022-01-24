@@ -27,7 +27,8 @@ hints:
 requirements:
   DockerRequirement:
   #  dockerPull: container-xing_topsstack_hamsar:devel
-    dockerPull: hysds1/pge-base-conda-python368:20200818
+  #  dockerPull: hysds1/pge-base-conda-python368:20200818
+    dockerPull: hysds1/topsstack_hamsar
   InitialWorkDirRequirement:
     listing:
       - entryname: .netrc
