@@ -37,7 +37,7 @@ requirements:
   DockerRequirement:
   #  dockerPull: container-xing_topsstack_hamsar:devel
   #  dockerPull: hysds1/pge-base-conda-python368:20200818
-    dockerPull: hysds1/topsstack_hamsar
+    dockerPull: hysds1/topsstack_hamsar:20220121
   InitialWorkDirRequirement:
     listing:
       - entryname: .netrc
@@ -47,6 +47,13 @@ requirements:
   NetworkAccess:
     class: NetworkAccess
     networkAccess: true
+  ResourceRequirement:
+    class: ResourceRequirement
+    coresMin: 8
+    # the next 3 are in mebibytes
+    ramMin: 64000
+    tmpdirMin: 200000
+    outdirMin: 100000
 inputs:
   urs_user: string
   urs_pass: string
