@@ -37,6 +37,14 @@ requirements:
   NetworkAccess:
     class: NetworkAccess
     networkAccess: true
+  # https://www.commonwl.org/v1.1/CommandLineTool.html#ResourceRequirement
+  ResourceRequirement:
+    class: ResourceRequirement
+    coresMin: 8
+    # the next 3 are in mebibytes
+    ramMin: 16384
+    tmpdirMin: 10240
+    outdirMin: 5120
 inputs:
   urs_user: string
   urs_pass: string
