@@ -7,18 +7,27 @@ $namespaces:
 baseCommand: [sh]
 arguments:
 - -c
-- cat .netrc && 
-  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
-  -p min_lat '$(inputs.min_lat)'
-  -p max_lat '$(inputs.max_lat)'
-  -p min_lon '$(inputs.min_lon)'
-  -p max_lon '$(inputs.max_lon)'
-  -p master_date '$(inputs.master_date)'
-  -p start_date '$(inputs.start_date)'
-  -p end_date '$(inputs.end_date)'
-  -p track_number '$(inputs.track_number)'"
-#- if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
+#- cat .netrc && 
+#  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
+#  -p min_lat '$(inputs.min_lat)'
+#  -p max_lat '$(inputs.max_lat)'
+#  -p min_lon '$(inputs.min_lon)'
+#  -p max_lon '$(inputs.max_lon)'
+#  -p master_date '$(inputs.master_date)'
+#  -p start_date '$(inputs.start_date)'
+#  -p end_date '$(inputs.end_date)'
+#  -p track_number '$(inputs.track_number)'"
 #  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
+- if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
+  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
+   -p min_lat '$(inputs.min_lat)'
+   -p max_lat '$(inputs.max_lat)'
+   -p min_lon '$(inputs.min_lon)'
+   -p max_lon '$(inputs.max_lon)'
+   -p master_date '$(inputs.master_date)'
+   -p start_date '$(inputs.start_date)'
+   -p end_date '$(inputs.end_date)'
+   -p track_number '$(inputs.track_number)'
 hints:
   "cwltool:Secrets":
     secrets:
@@ -27,7 +36,8 @@ hints:
 requirements:
   DockerRequirement:
   #  dockerPull: container-xing_topsstack_hamsar:devel
-    dockerPull: pymonger/pge-base-conda-python368:20220121
+  #  dockerPull: hysds1/pge-base-conda-python368:20200818
+    dockerPull: hysds1/topsstack_hamsar:20220121
   InitialWorkDirRequirement:
     listing:
       - entryname: .netrc
@@ -37,14 +47,13 @@ requirements:
   NetworkAccess:
     class: NetworkAccess
     networkAccess: true
-  # https://www.commonwl.org/v1.1/CommandLineTool.html#ResourceRequirement
   ResourceRequirement:
     class: ResourceRequirement
-    coresMin: 4
+    coresMin: 8
     # the next 3 are in mebibytes
-    ramMin: 8192
-    tmpdirMin: 10240
-    outdirMin: 5120
+    ramMin: 64000
+    tmpdirMin: 200000
+    outdirMin: 100000
 inputs:
   urs_user: string
   urs_pass: string
