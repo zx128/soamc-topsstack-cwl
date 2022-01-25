@@ -12,7 +12,9 @@ spec:
           runAsUser: 1000
           runAsGroup: 1000
         command:
-        - "/bin/sleep 3600"
+        - "sh"
+        - "-c"
+        - "sleep 3600"
         volumeMounts:
         - mountPath: /calrissian/output-data
           name: calrissian-output-data
