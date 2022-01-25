@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: view-results
+spec:
+  template:
+    spec:
+      containers:
+      - name: view-results
+        image: pymonger/calrissian:latest
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+        command:
+        - "sleep 3600"
+        volumeMounts:
+        - mountPath: /calrissian/output-data
+          name: calrissian-output-data
+          readOnly: true
+        - mountPath: /calrissian/tmpout
+          name: calrissian-tmpout
+          readOnly: true
+      restartPolicy: OnFailure
+      volumes:
+      - name: calrissian-output-data
+        persistentVolumeClaim:
+          claimName: output-data-
+      - name: calrissian-tmpout
+        persistentVolumeClaim:
+          claimName: output-tmpout-
