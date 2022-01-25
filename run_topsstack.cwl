@@ -7,17 +7,6 @@ $namespaces:
 baseCommand: [sh]
 arguments:
 - -c
-#- cat .netrc && 
-#  echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
-#  -p min_lat '$(inputs.min_lat)'
-#  -p max_lat '$(inputs.max_lat)'
-#  -p min_lon '$(inputs.min_lon)'
-#  -p max_lon '$(inputs.max_lon)'
-#  -p master_date '$(inputs.master_date)'
-#  -p start_date '$(inputs.start_date)'
-#  -p end_date '$(inputs.end_date)'
-#  -p track_number '$(inputs.track_number)'"
-#  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
 - if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
   /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
    -p min_lat '$(inputs.min_lat)'
@@ -35,8 +24,6 @@ hints:
       - urs_pass
 requirements:
   DockerRequirement:
-  #  dockerPull: container-xing_topsstack_hamsar:devel
-  #  dockerPull: hysds1/pge-base-conda-python368:20200818
     dockerPull: hysds1/topsstack_hamsar:20220121
   InitialWorkDirRequirement:
     listing:
