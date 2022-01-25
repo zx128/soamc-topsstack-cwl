@@ -56,8 +56,8 @@ requirements:
     outdirMin: 100000
   EnvVarRequirement:
     envDef:
-      CALRISSIAN_DELETE_PODS: false
-      RETRY_ATTEMPTS: 1
+      CALRISSIAN_DELETE_PODS: "false"
+      RETRY_ATTEMPTS: "1"
 inputs:
   urs_user: string
   urs_pass: string
