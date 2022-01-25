@@ -60,5 +60,5 @@ outputs:
     type: stdout
   stderr_file:
     type: stderr
-stdout: stdout_run_topsstack.txt
-stderr: stderr_run_topsstack.txt
+#stdout: stdout_run_topsstack.txt
+#stderr: stderr_run_topsstack.txt
