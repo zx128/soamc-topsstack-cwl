@@ -11,6 +11,8 @@ spec:
         securityContext:
           runAsUser: 1000
           runAsGroup: 1000
+        # shell into this pod using:
+        # kubectl -n $NAMESPACE_NAME exec -ti $(kubectl -n $NAMESPACE_NAME get pods --no-headers | grep view-results | awk '{print $1}') bash
         command:
         - "sh"
         - "-c"
