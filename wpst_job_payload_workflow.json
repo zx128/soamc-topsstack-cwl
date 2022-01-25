@@ -1,0 +1,17 @@
+{
+  "workflow_input_nb": "/home/jovyan/topsstack_hamsar/notebook_pges/xing-topsstack_hamsar_pge.ipynb",
+  "workflow_output_nb": "xing-topsstack_hamsar_pge-output.ipynb",
+  "workflow_min_lat": -8.621,
+  "workflow_max_lat": -8.218,
+  "workflow_min_lon": 122.859,
+  "workflow_max_lon": 123.576,
+  "workflow_master_date": "20210325",
+  "workflow_start_date": "2021-03-15",
+  "workflow_end_date": "2021-04-08",
+  "workflow_track_number": 163,
+  "workflow_urs_user": "user",
+  "workflow_urs_pass": "pass"
+  "workflow_aws_access_key_id": "access_key",
+  "workflow_aws_secret_access_key": "secret_key",
+  "workflow_base_dataset_url": "s3://soamc-ades-out/products"
+}
