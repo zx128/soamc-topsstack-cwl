@@ -1,8 +1,8 @@
 {
     "processDescription": {
         "process": {
-            "id": "topsstack",
-            "title": "topsstack",
+            "id": "echo",
+            "title": "echo",
             "owsContext": {
                 "offering": {
                     "content": {
