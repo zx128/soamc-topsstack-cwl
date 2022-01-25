@@ -6,7 +6,7 @@
             "owsContext": {
                 "offering": {
                     "content": {
-                        "href": "https://raw.githubusercontent.com/pymonger/soamc-topsstack-cwl/main/topsstack-workflow.cwl"
+                        "href": "https://raw.githubusercontent.com/zx128/soamc-topsstack-cwl/main/topsstack-workflow.cwl"
                     }
                 }
             },
