@@ -17,7 +17,6 @@ arguments:
   -p start_date '$(inputs.start_date)'
   -p end_date '$(inputs.end_date)'
   -p track_number '$(inputs.track_number)'"
-  /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) -f $(inputs.parameters.path)
 hints:
   "cwltool:Secrets":
     secrets:
