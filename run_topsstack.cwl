@@ -7,7 +7,7 @@ $namespaces:
 baseCommand: [sh]
 arguments:
 - -c
-- if [ ! -d $HOME/topsstack_hamsar ]; then cp -rp /home/jovyan/topsstack_hamsar $HOME/; fi &&
+- if [ ! -d $HOME/topsstack_hamsar ]; then cp -r /home/jovyan/topsstack_hamsar $HOME/; fi &&
   /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
    -p min_lat '$(inputs.min_lat)'
    -p max_lat '$(inputs.max_lat)'
