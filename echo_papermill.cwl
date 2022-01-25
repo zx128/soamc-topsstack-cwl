@@ -8,6 +8,8 @@ baseCommand: [sh]
 arguments:
 - -c
 - cat .netrc && 
+  dt=`date -u +"%Y%m%d%H%M%S"` &&
+  mkdir -p coregistered_slcs-$dt &&
   echo "/opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
   -p min_lat '$(inputs.min_lat)'
   -p max_lat '$(inputs.max_lat)'
@@ -16,7 +18,7 @@ arguments:
   -p master_date '$(inputs.master_date)'
   -p start_date '$(inputs.start_date)'
   -p end_date '$(inputs.end_date)'
-  -p track_number '$(inputs.track_number)'"
+  -p track_number '$(inputs.track_number)'" > coregistered_slcs-$dt/fake_product.txt
 hints:
   "cwltool:Secrets":
     secrets:
@@ -55,6 +57,10 @@ inputs:
   end_date: string
   track_number: int
 outputs:
+  dataset_dir:
+    type: Directory
+    outputBinding:
+      glob: "coregistered_slcs-*"
   stdout_file:
     type: stdout
   stderr_file:
