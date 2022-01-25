@@ -27,4 +27,4 @@ spec:
           claimName: output-data-
       - name: calrissian-tmpout
         persistentVolumeClaim:
-          claimName: output-tmpout-
+          claimName: tmpout-
