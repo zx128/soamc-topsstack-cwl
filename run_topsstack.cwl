@@ -56,6 +56,10 @@ inputs:
   end_date: string
   track_number: int
 outputs:
+  dataset_dir:
+    type: Directory
+    outputBinding:
+      glob: "coregistered_slcs-*"
   stdout_file:
     type: stdout
   stderr_file:
