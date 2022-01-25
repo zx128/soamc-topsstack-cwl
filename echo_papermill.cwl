@@ -36,11 +36,11 @@ requirements:
     networkAccess: true
   ResourceRequirement:
     class: ResourceRequirement
-    coresMin: 8
+    coresMin: 1
     # the next 3 are in mebibytes
-    ramMin: 64000
-    tmpdirMin: 200000
-    outdirMin: 100000
+    ramMin: 1024
+    tmpdirMin: 1000
+    outdirMin: 1000
 inputs:
   urs_user: string
   urs_pass: string
