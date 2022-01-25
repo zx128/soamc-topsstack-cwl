@@ -9,6 +9,14 @@ hints:
     secrets:
       - workflow_aws_access_key_id
       - workflow_aws_secret_access_key
+requirements:
+  ResourceRequirement:
+    class: ResourceRequirement
+    coresMin: 8
+    # the next 3 are in mebibytes
+    ramMin: 64000
+    tmpdirMin: 200000
+    outdirMin: 100000
 inputs:
   workflow_urs_user: string
   workflow_urs_pass: string
