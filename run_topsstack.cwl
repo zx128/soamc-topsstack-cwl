@@ -9,6 +9,7 @@ arguments:
 - -c
 - if [ ! -d $HOME/topsstack_hamsar ]; then cp -r /home/jovyan/topsstack_hamsar $HOME/; fi &&
   if [ ! -d $HOME/.ipython ]; then cp -r /home/jovyan/.ipython $HOME/ || true ; fi &&
+  if [ ! -d $HOME/.parallel ]; then mkdir -p /home/jovyan/.parallel; ln -sf /home/jovyan/.parallel $HOME/.parallel; fi &&
   /opt/conda/bin/papermill $(inputs.input_nb) $(inputs.output_nb) 
    -p min_lat '$(inputs.min_lat)'
    -p max_lat '$(inputs.max_lat)'
